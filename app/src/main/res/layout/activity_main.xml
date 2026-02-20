@@ -4,30 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/zipPathText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DDDDDD"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:background="#CCCCCC"
+        android:padding="4dp"
+        android:textSize="9sp"
+        android:textColor="#000000"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="ZIP Path: 未選択" />
 
-        <Button
-            android:id="@+id/btnOpenFile"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD">
+        
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ZIP選択" />
+            android:orientation="horizontal"
+            android:padding="2dp">
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <Button android:id="@+id/btnOpenFile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="開く" android:textSize="12sp" />
+            <Button android:id="@+id/btnPrev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="前へ" android:textSize="12sp" />
+            <Button android:id="@+id/btnNext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="次へ" android:textSize="12sp" />
+            <Button android:id="@+id/btnList" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="一覧" android:textSize="12sp" />
+            <Button android:id="@+id/btnFolderToggle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="フォルダ:非表示" android:textSize="12sp" />
+            <Button android:id="@+id/btnSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="設定" android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
-        <Button
-            android:id="@+id/btnCopy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="コピー" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/fileInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="6dp"
+        android:textSize="10sp"
+        android:textColor="#333333"
+        android:maxLines="2"
+        android:ellipsize="middle"
+        android:text="ファイル未選択" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,11 +59,11 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:gravity="top"
-            android:hint="ZIPファイルを選択してください"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:padding="16dp"
+            android:hint="テキスト内容"
+            android:inputType="none"
+            android:padding="12dp"
             android:textIsSelectable="true"
-            android:textSize="14sp" />
+            android:textSize="12sp"
+            android:focusable="false" />
     </ScrollView>
 </LinearLayout>

@@ -4,17 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.papa.zipfileviewer"
+    namespace = "com.papa.zipfiletextviewer"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.papa.zipfileviewer"
+        applicationId = "com.papa.zipfiletextviewer"
         minSdk = 29
         targetSdk = 33
-        versionCode = 6
-        versionName = "1.00.06"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionCode = 20
+        versionName = "1.00.20"
     }
 
     buildTypes {
@@ -23,6 +21,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    // Android 10でのパス直接参照を許可
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -35,5 +34,4 @@ android {
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
